@@ -65,7 +65,7 @@ router
     })
     .delete(async (req, res) => {
         try {
-            const removeUser = await postUser.remove({ _id: req.params.id });
+            const removeUser = await postUser.deleteOne({ _id: req.params.id });
             res.json(removeUser)
         } catch (err) {
             res.json({ message: err })
